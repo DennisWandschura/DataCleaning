@@ -80,7 +80,6 @@ loadData <- function(pathToDataFile, pathToLabelFile, pathToSubjectsFile, activi
   
   # set activity names as label
   myLabels <- myLabels %>%
-    as_tibble %>%
     left_join(activities, by=join_by(activityid)) %>% 
     select(activityname)
   
@@ -124,7 +123,7 @@ tidyDataset <- pivot_longer(mergedDataMeanStd, !c(activityname, type, subjectid)
 # transform feature names from unique back to original
 tidyDataset <- tidyDataset %>% mutate(featurename = str_match(featurename, "^[a-zA-Z0-9]*"))
 
-# create summary of features for each activity and subject.
+# create summary of features for each activity, subject and measured feature.
 summaryDataset <- tidyDataset %>% group_by(activityname, subjectid, featurename) %>% summarise(mean = mean(featurevalue))
 
 # write summary data to file
