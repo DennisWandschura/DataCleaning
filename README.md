@@ -1,6 +1,11 @@
 # Getting and Cleaning Data Course Project - Readme
 In this project i had to create a tidy dataset based on provided wearable data, create a Codebook and this Readme file.
 
+## Files
+- *CodeBook.md*: Describes the used variables and its data-types.
+- *README.md*: This file.
+- *run_analysis.R*: File containing the script for the analysis, creates the file 'summaryTable.txt'.
+
 ## My work process
 The first thing i did was download and check the data. It is important to understand what kind of data you have and how the data is connected.
 Help was provided in with the wearable data included 'Readme.txt'.
